@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/HelveticaNeueBold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Samsung Sharp Sans";
+  src: url("/fonts/samsungsharpsans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3ede8;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.mainText {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 6.7vw; /* Use viewport width for responsive font size */
+  margin: 0;
+  background: url("/images/textmain.jpg") no-repeat center center;
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subText {
+  font-family: "Samsung Sharp Sans", sans-serif;
+  font-size: 2vw; /* Use viewport width for responsive font size */
+}
+
+.subText span {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.discover:hover {
+  color: orange;
+  text-shadow: 0 0 10px orange;
+}
+
+.plan:hover {
+  color: red;
+  text-shadow: 0 0 10px red;
+}
+
+.connect:hover {
+  color: blue;
+  text-shadow: 0 0 10px blue;
+}
+
+.arrowContainer {
+  position: absolute;
+  bottom: 50px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+}
+
+.arrow {
+  animation: hoverUpDown 1.5s infinite;
+}
+
+@keyframes hoverUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for different screen sizes */
+@media (max-width: 1200px) {
+  .mainText {
+    font-size: 6.7vw;
+  }
+  .subText {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 992px) {
+  .mainText {
+    font-size: 8vw;
+  }
+  .subText {
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainText {
+    font-size: 12vw;
+  }
+  .subText {
+    font-size: 3.5vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainText {
+    font-size: 14vw;
+  }
+  .subText {
+    font-size: 4vw;
+  }
+}
